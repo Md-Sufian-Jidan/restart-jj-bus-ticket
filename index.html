@@ -135,7 +135,7 @@
                 <p class="md:text-xl text-xs text-[#03071299]">Yes, you can run unit tests and view the results directly
                     within the app. The integrated testing features allow for a streamlined .</p>
             </div>
-            <div class="bg-white  px-5 my-5 rounded-3xl flex items-center gap-5">
+            <div class="bg-white  px-5 my-10 rounded-3xl flex items-center gap-5">
                 <div>
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <div class="flex justify-center items-center gap-2">
@@ -180,6 +180,152 @@
                     <p class="text-lg text-[#03071299]">Per Seat</p>
                 </div>
             </div>
+            <!-- Select your seat section -->
+            <div class="bg-white p-8 flex justify-between gap-10">
+                <div>
+                    <p class="text-[#030712] font-semibold text-2xl">Select Your Seat</p>
+                    <hr class="border-dotted my-3">
+                    <div class="flex justify-between space-y-5">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="images/seat-gray.png" alt="">
+                            <p>Available</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="images/seat-green-filled.png" alt="">
+                            <p>Selected</p>
+                        </div>
+                    </div>
+                    <hr class="border-dotted my-3">
+                    <div class="flex justify-end space-y-5">
+                        <button class="bg-[#0307121A] btn w-28 mb-7">
+                            <img src="images/wheel.png" alt="">
+                        </button>
+                    </div>
+
+                    <!-- seats -->
+                    <div class="grid grid-cols-5 grid-rows-10 items-center gap-5 my-5">
+                        <p class="text-center">A</p>
+                        <button class="btn lg:w-[100px] seat-no">A1</button>
+                        <button class="btn lg:w-[100px] seat-no">A2</button>
+                        <button class="btn lg:w-[100px] seat-no">A3</button>
+                        <button class="btn lg:w-[100px] seat-no">A4</button>
+                        <p class="text-center">B</p>
+                        <button class="btn lg:w-[100px] seat-no">B1</button>
+                        <button class="btn lg:w-[100px] seat-no">B2</button>
+                        <button class="btn lg:w-[100px] seat-no">B3</button>
+                        <button class="btn lg:w-[100px] seat-no">B4</button>
+
+                        <p class="text-center">C</p>
+                        <button class="btn lg:w-[100px] seat-no">C1</button>
+                        <button class="btn lg:w-[100px] seat-no">C2</button>
+                        <button class="btn lg:w-[100px] seat-no">C3</button>
+                        <button class="btn lg:w-[100px] seat-no">C4</button>
+                        <p class="text-center">D</p>
+                        <button class="btn lg:w-[100px] seat-no">D1</button>
+                        <button class="btn lg:w-[100px] seat-no">D2</button>
+                        <button class="btn lg:w-[100px] seat-no">D3</button>
+                        <button class="btn lg:w-[100px] seat-no">D4</button>
+                        <p class="text-center">E</p>
+                        <button class="btn lg:w-[100px] seat-no">E1</button>
+                        <button class="btn lg:w-[100px] seat-no">E2</button>
+                        <button class="btn lg:w-[100px] seat-no">E3</button>
+                        <button class="btn lg:w-[100px] seat-no">E4</button>
+                        <p class="text-center">F</p>
+                        <button class="btn lg:w-[100px] seat-no">F1</button>
+                        <button class="btn lg:w-[100px] seat-no">F2</button>
+                        <button class="btn lg:w-[100px] seat-no">F3</button>
+                        <button class="btn lg:w-[100px] seat-no">F4</button>
+                        <p class="text-center">G</p>
+                        <button class="btn lg:w-[100px] seat-no">G1</button>
+                        <button class="btn lg:w-[100px] seat-no">G2</button>
+                        <button class="btn lg:w-[100px] seat-no">G3</button>
+                        <button class="btn lg:w-[100px] seat-no">G4</button>
+                        <p class="text-center">H</p>
+                        <button class="btn lg:w-[100px] seat-no">H1</button>
+                        <button class="btn lg:w-[100px] seat-no">H2</button>
+                        <button class="btn lg:w-[100px] seat-no">H3</button>
+                        <button class="btn lg:w-[100px] seat-no">H4</button>
+                        <p class="text-center">I</p>
+                        <button class="btn lg:w-[100px] seat-no">I1</button>
+                        <button class="btn lg:w-[100px] seat-no">I2</button>
+                        <button class="btn lg:w-[100px] seat-no">I3</button>
+                        <button class="btn lg:w-[100px] seat-no">I4</button>
+                        <p class="text-center">J</p>
+                        <button class="btn lg:w-[100px] seat-no">J1</button>
+                        <button class="btn lg:w-[100px] seat-no">J2</button>
+                        <button class="btn lg:w-[100px] seat-no">J3</button>
+                        <button class="btn lg:w-[100px] seat-no">J4</button>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="flex-1">
+                    <p class="text-[#030712] font-semibold text-2xl">Select Your Seat</p>
+                    <hr class="my-3 border-dotted">
+                    <!-- seat booking div -->
+                    <div class="bg-[#F7F8F8] p-8 rounded-xl">
+                        <div class="flex justify-between">
+                            <p>Seat<sup>0</sup></p>
+                            <p>Class</p>
+                            <p>Price</p>
+                        </div>
+
+                        <hr class="border-dotted my-3">
+                        <!-- dynamic div -->
+                        <div class="economy-div">
+                        </div>
+                        <!-- dynamic ul -->
+                        <ul class="flex justify-around mt-3">
+                        </ul>
+
+                        <hr class="border-dotted">
+                        <div class="flex justify-between my-5">
+                            <p class="text-lg font-bold">TotalPrice</p>
+                            <p class="font-bold">BDT<span class="font-bold" id="total-cost"></span></p>
+                        </div>
+                        <label id="label-hidden" class="input input-bordered flex items-center gap-2 my-5">
+                            <input id="coupon-input" type="text" class="grow" placeholder="Have any coupon?" />
+                            <button id="apply-btn" class="bg-[#1dd100] p-2 rounded-lg">Apply</button>
+                        </label>
+                        <div class="flex justify-between">
+                            <p class="font-bold">GrandTotal</p>
+                            <p class="font-bold">BDT<span class="font-bold" id="grand-total"></span></p>
+                        </div>
+
+                    </div>
+                    <!-- inputs div -->
+                    <div>
+                        <label class="form-control w-full max-w-xl">
+                            <div class="label mt-5">
+                                <span class="label-text font-bold text-2xl my-2">Passenger Name*</span>
+                            </div>
+                            <input type="text" placeholder="Enter Your Name"
+                                class="input input-bordered w-full max-w-xl required" />
+                        </label>
+                        <label class="form-control w-full max-w-xl">
+                            <div class="label mt-5">
+                                <span class="label-text font-bold text-2xl my-2">Phone Number*</span>
+                            </div>
+                            <input type="number" placeholder="Enter Your Phone Number"
+                                class="input input-bordered w-full max-w-xl required" />
+                        </label>
+                        <label class="form-control w-full max-w-xl">
+                            <div class="label mt-5">
+                                <span class="label-text font-bold text-2xl my-2">Email ID</span>
+                            </div>
+                            <input type="email" placeholder="Enter Your Email Id"
+                                class="input input-bordered w-full max-w-xl required" />
+                        </label>
+
+                        <button class="w-full btn bg-primary-color mt-6">Next</button>
+
+                        <div class="flex justify-between mt-6">
+                            <p class="text-xs text-[#03071299] underline">Terms and Conditions</p>
+                            <p class="text-xs text-[#03071299] underline">Cancellation Policy</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -200,11 +346,11 @@
         </div>
         <hr class="bg-[#FFFFFF4d] border-dotted">
         <div class="flex justify-between">
-            <p class="text-center">Copyright © 2025 - All right reserved by ACME Industries Ltd</p>
+            <p class="text-xs text-[#FFFFFFB3]">@all rights reserved, P-Ticket services limited.2024</p>
             <div class="flex justify-between gap-10">
-                <p>Terms & condition</p>
-                <p>Return & refund policy</p>
-                <p>Privacy policy</p>
+                <p class="text-xs font-medium">Terms & condition</p>
+                <p class="text-xs font-medium">Return & refund policy</p>
+                <p class="text-xs font-medium">Privacy policy</p>
             </div>
         </div>
     </footer>
