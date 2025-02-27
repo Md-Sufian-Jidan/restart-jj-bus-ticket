@@ -10,6 +10,11 @@ function elementById(elementId) {
     return element;
 }
 
+function scrollWin() {
+    window.scrollBehavior = "smooth";
+    window.scrollTo(0, 1770);
+}
+
 let count = 1;
 let left = 1;
 let sum = 0;
@@ -20,8 +25,19 @@ for (const seat of seats) {
     // console.log(seat);
     seat.addEventListener('click', function (e) {
 
+        const fourSeat = elementById('seat-count').innerText;
+
+        if (parseFloat(fourSeat) >= 4) {
+            alert('you cannot buy more than four tickets');
+            return
+        }
+
+        const disableSeat = e.target;
+        disableSeat.setAttribute('disabled', true);
+
         const seatCount = elementById('seat-count');
         seatCount.innerText = count++;
+
 
         const leftSeat = elementById('left-seat');
         const leftInt = parseInt(leftSeat.innerText);
@@ -64,7 +80,7 @@ for (const seat of seats) {
             console.log(coupon);
             const hideApplyBtn = elementById('hide-apply-btn');
             console.log(seatCount.innerText);
-            
+
             if (parseFloat(seatCount.innerText) === 4) {
                 if (coupon.toUpperCase() === 'NEW15') {
                     const discount = total * .15;
@@ -84,11 +100,12 @@ for (const seat of seats) {
                     alert('Please Type Your Coupon');
                 }
             }
-            else {
-                return alert('Invalid Coupon');
-            }
-
+            else if (coupon.toUpperCase() !== 'NEW15' && coupon.toUpperCase() !== 'COUPLE20') {
+                alert('invalid Coupon');
+            };
         })
+        // modal related function
+        // ID.showModal();
 
     });
 }
