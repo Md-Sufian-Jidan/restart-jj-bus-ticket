@@ -12,6 +12,7 @@ function elementById(elementId) {
 
 let count = 1;
 let left = 1;
+let sum = 0;
 
 const seats = document.querySelectorAll('.seat-no');
 
@@ -19,14 +20,15 @@ for (const seat of seats) {
     // console.log(seat);
     seat.addEventListener('click', function (e) {
 
-        console.log(e);
-
-        const findSeat = elementById('seat-count');
-        findSeat.innerText = count++;
+        const seatCount = elementById('seat-count');
+        seatCount.innerText = count++;
 
         const leftSeat = elementById('left-seat');
         const leftInt = parseInt(leftSeat.innerText);
         leftSeat.innerText = leftInt - left;
+
+        // color the seat
+        e.target.style.backgroundColor = '#1DD100';
 
         const dynamicDiv = elementById('economy-div');
         const p = document.createElement('p');
@@ -39,7 +41,7 @@ for (const seat of seats) {
 
         const p3 = document.createElement('p');
         p3.innerText = 550;
-
+        // dynamic paragraph styles
         p.style.display = 'flex';
         p.style.justifyContent = 'justify-between';
         p.style.gap = '110px';
@@ -50,9 +52,44 @@ for (const seat of seats) {
         //  append child in the dynamic div
         dynamicDiv.appendChild(p);
 
-        // <p>Seat<sup class="text-[#1dd100]" id="seat-count">0</sup></p>
-        // <p>Class</p>
-        // <p>Price</p>
+        const total = 550 * seatCount.innerText;
+
+        const costP = elementById('total-cost');
+        costP.innerText = total;
+
+        const applyBtn = elementById('apply-btn');
+        applyBtn.addEventListener('click', function applyBtn() {
+            // apply discount
+            const coupon = elementById('coupon').value;
+            console.log(coupon);
+            const hideApplyBtn = elementById('hide-apply-btn');
+            console.log(seatCount.innerText);
+            
+            if (parseFloat(seatCount.innerText) === 4) {
+                if (coupon.toUpperCase() === 'NEW15') {
+                    const discount = total * .15;
+                    const grandTotal = total - discount;
+                    const enterTotal = elementById('grand-total');
+                    enterTotal.innerText = grandTotal;
+                    hideApplyBtn.classList.add('hidden');
+                }
+                else if (coupon.toUpperCase() === 'COUPLE20') {
+                    const discount = total * .20;
+                    const grandTotal = total - discount;
+                    const enterTotal = elementById('grand-total');
+                    enterTotal.innerText = grandTotal;
+                    hideApplyBtn.classList.add('hidden');
+                }
+                else {
+                    alert('Please Type Your Coupon');
+                }
+            }
+            else {
+                return alert('Invalid Coupon');
+            }
+
+        })
+
     });
 }
 
